@@ -195,6 +195,13 @@ a {
     padding: 2rem;
 }
 
+/* Plus d'espace en haut sur mobile */
+@media (max-width: 768px) {
+    .hero-content {
+        padding-top: 4rem;
+    }
+}
+
 .hero-title {
     font-size: 4rem;
     font-weight: 800;
