@@ -162,6 +162,15 @@ a {
     overflow: hidden;
 }
 
+/* Hero plus grand sur mobile pour contenir tout le contenu */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100vh; /* Au lieu de height fixe */
+        height: auto; /* Laisse le contenu définir la hauteur */
+        padding-bottom: 3rem; /* Espace en bas */
+    }
+}
+
 .hero-video {
     position: absolute;
     top: 0;
