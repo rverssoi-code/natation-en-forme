@@ -162,12 +162,13 @@ a {
     overflow: hidden;
 }
 
-/* Hero plus grand sur mobile pour contenir tout le contenu */
+/* Hero mobile - hauteur auto pour contenir le contenu */
 @media (max-width: 768px) {
     .hero {
-        min-height: 100vh; /* Au lieu de height fixe */
-        height: auto; /* Laisse le contenu définir la hauteur */
-        padding-bottom: 7rem; /* Espace en bas */
+        height: auto;
+        min-height: 100vh;
+        padding-top: 80px; /* Hauteur de la navbar */
+        padding-bottom: 2rem;
     }
 }
 
@@ -204,10 +205,10 @@ a {
     padding: 2rem;
 }
 
-/* Plus d'espace en haut sur mobile */
+/* Pas de padding-top supplémentaire sur mobile - on gère avec le hero */
 @media (max-width: 768px) {
     .hero-content {
-        padding-top: 10rem;
+        padding: 2rem 1rem;
     }
 }
 
@@ -222,7 +223,7 @@ a {
 /* Titre plus petit sur mobile */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 1.5rem;  /* Change ça pour 1.75rem */
+        font-size: 2rem;
         margin-bottom: 1rem;
     }
 }
@@ -306,7 +307,6 @@ a {
 .scroll-indicator {
     display: none;
 }
-
 /*
 .scroll-indicator {
     position: absolute;
