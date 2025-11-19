@@ -1,0 +1,56 @@
+backend:
+  name: github
+  repo: VOTRE-USERNAME/natation-en-forme  # À MODIFIER avec le vrai repo
+  branch: main
+
+# Configuration des médias
+media_folder: "images/posts"
+public_folder: "/images/posts"
+
+# Langue de l'interface
+locale: 'fr'
+
+# Collections
+collections:
+  # ACTUALITÉS
+  - name: "actualites"
+    label: "Actualités"
+    folder: "posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date de publication", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "Image principale", name: "image", widget: "image", required: false}
+      - {label: "Résumé (court)", name: "excerpt", widget: "text", required: false}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+      - {label: "Publié", name: "published", widget: "boolean", default: true}
+    
+  # PAGES PRINCIPALES (optionnel pour éditer contenu des pages)
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Page d'accueil"
+        name: "home"
+        file: "content/home.md"
+        fields:
+          - {label: "Titre hero", name: "hero_title", widget: "string"}
+          - {label: "Sous-titre hero", name: "hero_subtitle", widget: "text"}
+          - {label: "Texte introduction", name: "intro_text", widget: "markdown"}
+      
+      - label: "À propos"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Contenu", name: "body", widget: "markdown"}
+      
+      - label: "Contact"
+        name: "contact"
+        file: "content/contact.md"
+        fields:
+          - {label: "Titre", name: "title", widget: "string"}
+          - {label: "Adresse Joliette", name: "address_joliette", widget: "text"}
+          - {label: "Adresse Rawdon", name: "address_rawdon", widget: "text"}
+          - {label: "Téléphone", name: "phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
