@@ -167,7 +167,7 @@ a {
     .hero {
         min-height: 100vh; /* Au lieu de height fixe */
         height: auto; /* Laisse le contenu définir la hauteur */
-        padding-bottom: 3rem; /* Espace en bas */
+        padding-bottom: 7rem; /* Espace en bas */
     }
 }
 
