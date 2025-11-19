@@ -198,7 +198,7 @@ a {
 /* Plus d'espace en haut sur mobile */
 @media (max-width: 768px) {
     .hero-content {
-        padding-top: 4rem;
+        padding-top: 6rem;
     }
 }
 
