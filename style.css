@@ -351,6 +351,45 @@ a {
 
 */
 
+
+/*--------------------------------------------------------------------*/
+
+
+/* Hero court pour pages internes */
+.hero-short {
+    height: 50vh;
+    min-height: 400px;
+}
+
+.hero-short .hero-title {
+    font-size: 3rem;
+}
+
+.hero-short .hero-subtitle {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .hero-short {
+        height: auto;
+        min-height: 60vh;
+    }
+    
+    .hero-short .hero-title {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+
+/*--------------------------------------------------------------------*/
+
+
+
+
+
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1567,5 +1606,441 @@ section {
     .schedule-table th,
     .schedule-table td {
         padding: 0.8rem;
+    }
+}
+
+
+/* ===========================
+   STYLES SUPPLÉMENTAIRES POUR PAGE COURS
+   À ajouter à la fin de style.css
+   =========================== */
+
+/* Navigation rapide */
+.quick-nav-section {
+    padding: 3rem 0 2rem;
+    background: var(--bg-light);
+}
+
+.quick-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.quick-nav-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.quick-nav-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.quick-nav-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.quick-nav-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.quick-nav-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* Sections Cours */
+.cours-section {
+    padding: 4rem 0;
+}
+
+.cours-section.alternate {
+    background: var(--bg-light);
+}
+
+.section-header-cours {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header-cours .section-title {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.section-intro {
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Items de cours */
+.cours-item {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.cours-item:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.cours-item.highlight-nouveau {
+    border-left: 4px solid var(--accent-color);
+}
+
+.cours-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.cours-header h3 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cours-meta {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: var(--bg-light);
+    color: var(--text-medium);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.badge-nouveau {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cours-content {
+    color: var(--text-dark);
+}
+
+.cours-description h4 {
+    color: var(--primary-dark);
+    margin: 1.5rem 0 0.75rem;
+    font-size: 1.1rem;
+}
+
+.cours-description ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.cours-description ul li {
+    padding: 0.4rem 0 0.4rem 1.5rem;
+    position: relative;
+}
+
+.cours-description ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.cours-note {
+    background: #e8f4f8;
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    font-style: italic;
+    color: var(--text-medium);
+}
+
+/* Checklists avec images */
+.checklist-preview {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: var(--bg-light);
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+
+.checklist-image {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* EFFET HOVER SUR IMAGES - ZOOM LÉGER */
+.checklist-image:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+.checklist-items {
+    flex: 1;
+    min-width: 300px;
+}
+
+.checklist-items p {
+    margin-bottom: 0.75rem;
+}
+
+.checklist-items ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.checklist-items ul li {
+    padding: 0.35rem 0 0.35rem 1.3rem;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.checklist-items ul li:before {
+    content: "□";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.note-correction {
+    display: inline-block;
+    background: #fff3cd;
+    color: #856404;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+}
+
+/* Info boxes */
+.info-box {
+    background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f2 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.info-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.info-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.info-grid-2 ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-grid-2 ul li {
+    padding: 0.3rem 0 0.3rem 1.3rem;
+    position: relative;
+}
+
+.info-grid-2 ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Section Info générale */
+.info-generale-section {
+    padding: 4rem 0;
+    background: var(--bg-light);
+}
+
+.info-generale-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.info-generale-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.info-generale-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+.info-generale-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.info-generale-card p {
+    color: var(--text-medium);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* CTA Buttons dans section */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-secondary-cta {
+    background: white;
+    color: var(--primary-color);
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: 2px solid var(--primary-color);
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-secondary-cta:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section-header-cours .section-title {
+        font-size: 1.8rem;
+    }
+
+    .cours-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cours-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .checklist-preview {
+        flex-direction: column;
+    }
+
+    .checklist-image {
+        width: 100%;
+    }
+
+    .quick-nav-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .info-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-secondary-cta,
+    .btn-cta {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cours-item {
+        padding: 1.5rem;
+    }
+
+    .badge {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .checklist-items ul li {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===========================
+   STYLE BOUTON TERTIAIRE HERO
+   À ajouter à la fin de style.css
+   =========================== */
+
+.btn-hero-tertiary {
+    background: transparent;
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.btn-hero-tertiary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .btn-hero-tertiary {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+        width: 100%;
+        text-align: center;
     }
 }
