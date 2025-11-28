@@ -2094,3 +2094,46 @@ section {
         text-align: center;
     }
 }
+
+/* ============================================
+   FIX BOUTONS HERO - MOBILE (3 boutons)
+   ============================================ */
+
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .hero-buttons .btn-hero-primary,
+    .hero-buttons .btn-hero-secondary,
+    .hero-buttons .btn-hero-tertiary {
+        width: 100%;
+        font-size: 0.85rem;
+        padding: 0.75rem 1rem;
+        text-align: center;
+        white-space: normal;
+        line-height: 1.3;
+        min-height: 45px;
+    }
+    
+    .btn-hero-primary {
+        font-size: 0.9rem;
+    }
+    
+    .btn-hero-secondary,
+    .btn-hero-tertiary {
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-buttons .btn-hero-primary,
+    .hero-buttons .btn-hero-secondary,
+    .hero-buttons .btn-hero-tertiary {
+        font-size: 0.75rem;
+        padding: 0.65rem 0.8rem;
+    }
+}
