@@ -66,6 +66,12 @@ a {
     transition: var(--transition);
 }
 
+/* Container navbar plus large */
+.navbar .container {
+    max-width: 1600px;
+    padding: 0 2rem;
+}
+
 .navbar.scrolled {
     background: rgba(255, 255, 255, 0.98);
     box-shadow: var(--shadow-md);
@@ -76,36 +82,58 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+    gap: 1rem;  /* Espace entre logo et menu */
 }
 
-.logo a {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
+/* Dans ton CSS ---------------------------------------------*/
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px;  /* Ajuste selon ce que tu veux */
+    width: auto;
     transition: var(--transition);
 }
 
-/* Logo plus petit sur mobile */
-@media (max-width: 768px) {
-    .logo a {
-        font-size: 1rem;
-    }
+.logo-image:hover {
+    transform: scale(1.05);  /* Petit zoom au survol */
 }
 
-.logo a:hover {
-    color: var(--primary-dark);
+/* Plus petit sur mobile */
+@media (max-width: 768px) {
+    .logo-image {
+        height: 35px;  /* Plus petit sur mobile */
+    }
 }
+/* Dans ton CSS ----------------NAME---------------------*/
+
+.logo-name {
+    height: 15px;  /* Ajuste selon ce que tu veux */
+    width: auto;
+    transition: var(--transition);
+}
+
+/* Plus petit sur mobile */
+@media (max-width: 768px) {
+    .logo-name {
+        height: 15px;  /* Plus petit sur mobile */
+    }
+}
+/* Dans ton CSS ----------------NAME-----------------------------*/
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.2rem; /* 2 avant */
     align-items: center;
 }
 
 .nav-menu li a {
     color: var(--text-dark);
     font-weight: 500;
+    font-size: 0.95rem;  /* Légèrement plus petit */
     transition: var(--transition);
     position: relative;
 }
@@ -161,6 +189,27 @@ a {
     justify-content: center;
     overflow: hidden;
 }
+
+/* ===========================
+        EMPLOI SECTION 
+   =========================== */
+.emploi-cta {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    padding: 3rem 0;
+    text-align: center;
+    color: white;
+}
+
+.emploi-cta h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.emploi-cta p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}
+
 
 /* Hero mobile - hauteur auto pour contenir le contenu */
 @media (max-width: 768px) {
@@ -657,7 +706,8 @@ section {
 .btn-primary {
     background: var(--white);
     color: var(--primary-color);
-    padding: 0.75rem 1.5rem;
+    padding: 0.6rem 1.2rem;  /* Au lieu de plus gros */
+    font-size: 0.9rem;
     border-radius: 50px;
     font-weight: 700;
     transition: var(--transition);
