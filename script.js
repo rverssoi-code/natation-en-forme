@@ -111,6 +111,8 @@ document.querySelectorAll('.programme-card, .actualite-card').forEach(card => {
     observer.observe(card);
 });
 
+
+
 // ===========================
 // CHARGEMENT DYNAMIQUE ACTUALITÉS
 // (Sera connecté à Decap CMS plus tard)
@@ -141,9 +143,37 @@ if ('loading' in HTMLImageElement.prototype) {
 }
 
 // ===========================
+// SLIDSHOW DANS INDEX
+// ===========================
+
+const images = [
+
+    'images/piscine-rawdon-g.jpg',
+    'images/campusstjoseph_lavaltrie.jpg'
+
+];
+
+let index = 0;
+const slideshow = document.querySelector('.slideshow');
+
+setInterval(() => {
+    slideshow.style.opacity = 0;
+    setTimeout(() => {
+        index = (index + 1) % images.length;
+        slideshow.src = images[index];
+        slideshow.style.opacity = 1;
+    }, 800);
+}, 4000);
+
+
+// ===========================
 // INIT
 // ===========================
 document.addEventListener('DOMContentLoaded', () => {
     chargerActualites();
     console.log('Natation en Forme - Site chargé avec succès! 🏊‍♀️');
 });
+
+
+
+

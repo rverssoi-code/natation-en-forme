@@ -641,9 +641,17 @@ section {
     font-weight: 700;
 }
 
-.mission-image img {
+/*.mission-image img {
     border-radius: 15px;
     box-shadow: var(--shadow-lg);
+}*/
+
+.mission-image img {
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.8s ease-in-out;
+    width: 100%;
+    height: auto;
 }
 
 /* ===========================
@@ -950,6 +958,140 @@ section {
         font-size: 2rem;
     }
 }
+
+/* ===========================
+  
+   =========================== */
+
+/* Ajuster l'espace entre les items du menu pour tablette */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .nav-menu {
+        gap: 0.8rem; /* Réduit de 1.2rem à 0.8rem */
+    }
+    
+    .nav-menu li a {
+        font-size: 0.85rem; /* Plus petit */
+    }
+    
+    .navbar .container {
+        padding: 0 1rem; /* Réduit le padding latéral */
+    }
+}
+
+/* Mode hamburger commence plus tôt (à 1024px au lieu de 768px) */
+@media (max-width: 1024px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow-md);
+        padding: 2rem 0;
+        gap: 0;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+        padding: 0.8rem 0;
+    }
+    
+    .nav-menu li a {
+        display: block;
+        padding: 0.5rem 1rem;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+}
+
+/* ===========================
+   FIX #2: LOGO MOBILE OPTIMISÉ
+   Logo plus court en mobile
+   =========================== */
+
+/* Tablette - logo moyen */
+@media (max-width: 1024px) {
+    .logo-image {
+        height: 40px;
+    }
+    .logo-name {
+        height: 13px;
+    }
+}
+
+/* Mobile - logo encore plus petit */
+@media (max-width: 768px) {
+    .logo-image {
+        height: 32px; /* Réduit de 35px à 32px */
+    }
+    .logo-name {
+        height: 12px; /* Réduit de 15px à 12px */
+    }
+}
+
+/* Très petit mobile */
+@media (max-width: 375px) {
+    .logo-image {
+        height: 28px;
+    }
+    .logo-name {
+        height: 10px;
+    }
+}
+
+/* ===========================
+   FIX #3: BOUTON "INSCRIPTION" PLUS COURT
+   On cache "en ligne" sur les petits écrans
+   =========================== */
+
+/* Ajoute une classe pour le texte court */
+.btn-text-short {
+    display: none;
+}
+
+/* En dessous de 1200px, on montre le texte court */
+@media (max-width: 1200px) {
+    .btn-text-full {
+        display: none;
+    }
+    .btn-text-short {
+        display: inline;
+    }
+}
+
+/* Ajuste le padding du bouton pour qu'il soit plus compact */
+@media (max-width: 1200px) {
+    .nav-menu li a.btn-primary {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu li a.btn-primary {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+        width: auto;
+        display: inline-block;
+    }
+}
+
+
+
+
+/* ===========================
+  
+   =========================== */
+
 /* ===========================
    STYLES ADDITIONNELS POUR LES PAGES
    À ajouter à la fin de style.css
