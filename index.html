@@ -6,6 +6,7 @@
     <title>Natation en Forme - L'eau à votre santé</title>
     <meta name="description" content="Cours de natation et aquaforme à Joliette et Rawdon. Développez votre potentiel santé dans l'eau.">
     <link rel="stylesheet" href="style.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -220,5 +221,16 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+    </script>
 </body>
 </html>
