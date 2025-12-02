@@ -1,20 +1,13 @@
 backend:
-  name: github
-  repo: rverssoi-code/natation-en-forme
+  name: git-gateway
   branch: main
-  base_url: https://natation-oauth.jushop.workers.dev
-  auth_endpoint: /auth
 
-# Configuration des médias
 media_folder: "images/posts"
 public_folder: "/images/posts"
 
-# Langue de l'interface
 locale: 'fr'
 
-# Collections
 collections:
-  # ACTUALITÉS - Lynn Bourgeois peut éditer!
   - name: "actualites"
     label: "Actualités"
     folder: "post"
