@@ -6,6 +6,8 @@
     <title>Natation en Forme - L'eau à votre santé</title>
     <meta name="description" content="Cours de natation et aquaforme à Joliette et Rawdon. Développez votre potentiel santé dans l'eau.">
     <link rel="stylesheet" href="style.css">
+    <!-- Cookie Banner CSS -->
+    <link rel="stylesheet" href="cookie-banner.css">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
@@ -221,6 +223,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="cookie-banner.js"></script>
     <script>
     if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {
@@ -232,5 +235,75 @@
     });
   }
     </script>
+
+<!-- Cookie Banner -->
+<div class="cookie-banner">
+    <div class="cookie-banner-content">
+        <div class="cookie-banner-text">
+            <p>
+                <strong>Respect de votre vie privée</strong><br>
+                Nous utilisons des cookies pour améliorer votre expérience de navigation. 
+                Conformément à la <strong>Loi 25</strong> sur la protection des renseignements personnels, 
+                vous avez le contrôle sur vos données. Vous pouvez accepter, refuser ou gérer vos préférences.
+            </p>
+        </div>
+        <div class="cookie-banner-buttons">
+            <button class="cookie-btn cookie-btn-accept">Accepter</button>
+            <button class="cookie-btn cookie-btn-refuse">Refuser</button>
+            <button class="cookie-btn cookie-btn-manage">Gérer</button>
+        </div>
+    </div>
+</div>
+
+<!-- Panneau de gestion des cookies -->
+<div class="cookie-settings-overlay"></div>
+<div class="cookie-settings">
+    <h3>Gestion des cookies</h3>
+    
+    <div class="cookie-category">
+        <div class="cookie-category-header">
+            <span class="cookie-category-title">Cookies essentiels</span>
+            <label class="cookie-toggle">
+                <input type="checkbox" checked disabled>
+                <span class="cookie-toggle-slider"></span>
+            </label>
+        </div>
+        <p class="cookie-category-description">
+            Ces cookies sont nécessaires au bon fonctionnement du site. Ils ne peuvent pas être désactivés.
+        </p>
+    </div>
+    
+    <div class="cookie-category">
+        <div class="cookie-category-header">
+            <span class="cookie-category-title">Cookies analytiques</span>
+            <label class="cookie-toggle">
+                <input type="checkbox" id="cookie-analytics">
+                <span class="cookie-toggle-slider"></span>
+            </label>
+        </div>
+        <p class="cookie-category-description">
+            Ces cookies nous aident à comprendre comment vous utilisez le site pour l'améliorer.
+        </p>
+    </div>
+    
+    <div class="cookie-category">
+        <div class="cookie-category-header">
+            <span class="cookie-category-title">Cookies marketing</span>
+            <label class="cookie-toggle">
+                <input type="checkbox" id="cookie-marketing">
+                <span class="cookie-toggle-slider"></span>
+            </label>
+        </div>
+        <p class="cookie-category-description">
+            Ces cookies permettent de personnaliser les publicités selon vos intérêts.
+        </p>
+    </div>
+    
+    <div class="cookie-settings-buttons">
+        <button class="cookie-settings-cancel">Annuler</button>
+        <button class="cookie-settings-save">Sauvegarder</button>
+    </div>
+</div>
+
 </body>
 </html>
