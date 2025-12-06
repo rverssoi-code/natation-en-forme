@@ -1,0 +1,26 @@
+# ---------------------------------------
+#  Cloudflare Worker : decap-oauth
+# ---------------------------------------
+
+name = "decap-oauth"
+main = "src/index.js"
+compatibility_date = "2025-12-05"
+
+# Active l’interface Logs Cloudflare
+[observability]
+enabled = true
+
+# Variables accessibles dans le worker (NON sensibles)
+[vars]
+REDIRECT_URI = "https://decap-oauth.jushop.workers.dev/callback"
+
+# Secrets → enregistrés dans Cloudflare (ne jamais mettre les valeurs ici)
+[env.production]
+secrets = [
+  "GITHUB_CLIENT_ID",
+  "GITHUB_CLIENT_SECRET"
+]
+
+# (Optionnel)
+#workers_dev = true
+#preview_urls = false

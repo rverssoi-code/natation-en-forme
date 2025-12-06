@@ -2,7 +2,8 @@ backend:
   name: github
   repo: rverssoi-code/natation-en-forme
   branch: main
-  # Pas de base_url ni auth_endpoint avec la méthode callback.html
+  base_url: "https://decap-oauth.jushop.workers.dev"
+  auth_endpoint: "auth"
 
 media_folder: "images/posts"
 public_folder: "/images/posts"
