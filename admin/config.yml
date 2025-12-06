@@ -2,8 +2,7 @@ backend:
   name: github
   repo: rverssoi-code/natation-en-forme
   branch: main
-  base_url: https://natationenforme.com  # TON DOMAINE (pas .workers.dev!)
-  auth_endpoint: /api/auth               # Path vers la Function
+  # Pas de base_url ni auth_endpoint avec la méthode callback.html
 
 media_folder: "images/posts"
 public_folder: "/images/posts"
