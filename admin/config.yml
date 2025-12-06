@@ -2,8 +2,8 @@ backend:
   name: github
   repo: rverssoi-code/natation-en-forme
   branch: main
-  base_url: https://natation-oauth.jushop.workers.dev
-  auth_endpoint: /auth
+  # base_url: https://natation-oauth.jushop.workers.dev
+  # auth_endpoint: /auth
 
 media_folder: "images/posts"
 public_folder: "/images/posts"
