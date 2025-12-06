@@ -1851,6 +1851,13 @@ section {
 }
 
 /* Sections Cours */
+
+.note-container {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start; /* Aligne en haut */
+}
+
 .cours-section {
     padding: 4rem 0;
 }
@@ -1967,14 +1974,39 @@ section {
 }
 
 .cours-note {
-    background: #e8f4f8;
+    /* ===== STYLE DE LA BULLE BLEUE ===== */
+    background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f2 100%);
     border-left: 4px solid var(--primary-color);
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 4px;
-    font-style: italic;
-    color: var(--text-medium);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    
+    /* ===== GRID POUR TEXTE + IMAGE ===== */
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
 }
+
+.coursnote-image {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.coursnote-image:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+.cours-note p {
+    margin: 0;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+
 
 /* Checklists avec images */
 .checklist-preview {
@@ -1996,8 +2028,19 @@ section {
     cursor: pointer;
 }
 
+.coursnote-image {
+     width: 150px;
+    height: auto;
+    flex-shrink: 8; /* Empêche l'image de rétrécir */
+}
+
 /* EFFET HOVER SUR IMAGES - ZOOM LÉGER */
 .checklist-image:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+.coursnote-image:hover {
     transform: scale(1.05);
     box-shadow: var(--shadow-lg);
 }
@@ -2166,6 +2209,17 @@ section {
 
     .checklist-image {
         width: 100%;
+    }
+
+    .cours-note {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .coursnote-image {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
     }
 
     .quick-nav-grid {
