@@ -1990,7 +1990,8 @@ section {
 
 .coursnote-image {
     width: 150px;
-    height: auto;
+    height: 150px;          /* ✅ Hauteur fixe */
+    object-fit: cover;      /* ✅ Crop intelligent */
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -1998,7 +1999,7 @@ section {
 .coursnote-image:hover {
     transform: scale(1.05);
     box-shadow: var(--shadow-lg);
-}
+    }
 
 .cours-note p {
     margin: 0;
@@ -2029,10 +2030,11 @@ section {
 }
 
 .coursnote-image {
-     width: 150px;
-    height: auto;
-    flex-shrink: 8; /* Empêche l'image de rétrécir */
-}
+        width: 100%;
+        max-width: 250px;
+        height: 250px;      /* ✅ Garde le ratio carré sur mobile aussi */
+        margin: 0 auto;
+    }
 
 /* EFFET HOVER SUR IMAGES - ZOOM LÉGER */
 .checklist-image:hover {
