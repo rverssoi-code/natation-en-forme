@@ -46,16 +46,19 @@ export default {
       const token = tokenData.access_token;
 
       return new Response(
-        `<html><body>
-            <script>
-              window.opener.postMessage("authorization:github:success:${token}", "*");
-              window.close();
-            </script>
-        </body></html>`,
-        {
-          headers: { "Content-Type": "text/html" },
+			`<!DOCTYPE html>
+        	<html>
+				<body>
+            		<script>
+              		window.opener.postMessage("authorization:github:success:${token}", "*");
+              		window.close();
+            		</script>
+        		</body>
+			</html>`,
+        { 
+			headers: { "Content-Type": "text/html" },
         }
-      );
+      	);
     }
 
     // route inconnue
