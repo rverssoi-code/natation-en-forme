@@ -6,7 +6,7 @@
 // ⚙️ CONFIGURATION GITHUB
 const GITHUB_CONFIG = {
     username: 'rverssoi-code',
-    repo: 'rvs-health-website',
+    repo: 'natation-en-forme',
     branch: 'main',
     token: null, // Sera chargé depuis localStorage
 };
