@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Natation En Forme | Actualités</title>
+    <link rel="stylesheet" href="admin-style.css">
+</head>
+<body class="login-page">
+    <!-- Hero avec vidéo d'eau -->
+    <div class="hero-background">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="../videos/hero-natation.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>🏊🏻‍♀️</h1>
+                <h1>Natation En Forme</h1>
+                <p class="login-subtitle">Administration des actualités</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        placeholder="Entrez votre mot de passe"
+                        required
+                        autocomplete="current-password"
+                    >
+                </div>
+                
+                <button type="submit" class="btn-login">
+                    Se connecter
+                </button>
+                
+                <div id="errorMessage" class="error-message"></div>
+            </form>
+            
+            <div class="login-footer">
+                <p>• Login Natation En Forme •</p>
+                <p>Produit par RVS Productions</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mot de passe simple (tu peux le changer)
+        const ADMIN_PASSWORD = 'natation2024';
+        
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('errorMessage');
+            
+            if (password === ADMIN_PASSWORD) {
+                // Sauvegarde la session
+                sessionStorage.setItem('rvs_admin_auth', 'true');
+                // Redirige vers le dashboard
+                window.location.href = 'dashboard.html';
+            } else {
+                errorDiv.textContent = 'Mot de passe incorrect';
+                errorDiv.style.display = 'block';
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+            }
+        });
+        
+        // Si déjà connecté, redirige
+        if (sessionStorage.getItem('rvs_admin_auth') === 'true') {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>
