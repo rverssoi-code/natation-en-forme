@@ -536,7 +536,6 @@ function generateId() {
     const date = document.getElementById('date').value;
     const titre = document.getElementById('titre').value;
     const slug = titre.toLowerCase()
-        .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Enlever accents
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/^-|-$/g, '');
     
