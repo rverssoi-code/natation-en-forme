@@ -63,13 +63,23 @@ async function loadActualites() {
         container.innerHTML = html;
         
         // Réappliquer l'animation fade-in aux nouvelles cartes
-        document.querySelectorAll('.actualite-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-        
+document.querySelectorAll('.actualite-card').forEach(card => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    
+    // Utiliser observer seulement s'il existe
+    if (typeof observer !== 'undefined') {
+        observer.observe(card);
+    } else {
+        // Animation immédiate si observer n'existe pas
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 100);
+    }
+});
+
     } catch (error) {
         console.error('Erreur chargement actualités:', error);
         container.innerHTML = `
