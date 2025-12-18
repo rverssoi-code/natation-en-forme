@@ -1,17 +1,31 @@
 {
   "actualites": [
     {
-      "id": "2025-12-18-date-des-inscriptions",
+      "id": "2025-12-18-bains-libres-familiales",
       "titre": "Bains libres Familiales",
       "date": "2025-12-18",
-      "contenu": " Fermé pendant la période des fêtes ( prendre note que les bains sont offerts aux mêmes dates que les cours enfants.  Les autres weekends pas de bains offerts ) <br>\n\n<mark>Retour 24 et 25 janvier 2026</mark>\nDébut des cours :\n<strong>Rawdon :</strong>  24 et 25 janvier 2026\n<strong>Joliette :</strong> pas de bains offerts – réservation pour location - privé possible\n",
+      "contenu": "Fermé pendant la période des fêtes ( prendre note que les bains sont offerts aux mêmes dates que les cours enfants.  Les autres weekends pas de bains offerts ) \nRetour 24 et 25 janvier 2026\nDébut des cours :\nRawdon :  24 et 25 janvier 2026\nJoliette : pas de bains offerts – réservation pour location - privé possible",
+      "published": true
+    },
+    {
+      "id": "2025-12-18-bains-en-longueurs-adultes",
+      "titre": "Bains en longueurs Adultes ",
+      "date": "2025-12-18",
+      "contenu": "Lundi et mercredi\nRetour le mercredi 7 janvier \nFermée pendant la semaine de relâche du 2 au 6 mars\nFin : mercredi 27 mai",
       "published": true
     },
     {
       "id": "2025-12-18-dates-de-la-session-hiver",
-      "titre": "Bains en longueurs Adultes :",
+      "titre": "Dates de la session Hiver :",
       "date": "2025-12-18",
-      "contenu": "Lundi et mercredi<br>\nRetour le mercredi 7 janvier<br>\nFermée pendant la semaine de relâche du 2 au 6 mars<br>\nFin : mercredi 27 mai",
+      "contenu": "Enfants - Rawdon :  mardi 20 janvier au dim 22 mars \n( horaire à déterminé pour + de cours en semaine )\nEnfants - Joliette :  sam 31 janvier au dim 29 mars  \n( horaire à déterminé pour + de cours en semaine )\nEnfants   Fermée pendant la semaine de relâche à partir du premier weekend 28 fév au 6 mars, 2026",
+      "published": true
+    },
+    {
+      "id": "2025-12-18-date-des-inscriptions",
+      "titre": "Date des inscriptions :",
+      "date": "2025-12-18",
+      "contenu": "Joliette et Rawdon\nEnfants - Cours de natation - weekend du 17 et 18 janvier 2026\n\nAdultes Aquaforme - 5 janvier, 2026 - Fermée pendant la semaine de relâche 2-6 mars",
       "published": true
     }
   ]
