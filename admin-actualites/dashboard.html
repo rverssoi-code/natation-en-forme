@@ -5,6 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Actualités Natation En Forme</title>
     <link rel="stylesheet" href="admin-style.css">
+    <style>
+        /* Barre d'outils d'édition */
+        .editor-toolbar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .editor-btn {
+            padding: 8px 12px;
+            background: white;
+            border: 2px solid var(--beige-chaud);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            font-weight: 600;
+        }
+        
+        .editor-btn:hover {
+            background: var(--vert-sauge);
+            color: white;
+            border-color: var(--vert-sauge);
+            transform: translateY(-2px);
+        }
+        
+        .editor-btn strong {
+            font-size: 18px;
+        }
+        
+        .editor-btn em {
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        /* Message de bienvenue pour Lynn 💙 */
+        .welcome-message {
+            font-family: 'Gabriela', cursive;
+            color: var(--vert-sauge);
+            font-size: 1rem;
+            margin-top: 12px;
+            font-style: italic;
+            opacity: 0;
+            animation: fadeIn 1.5s ease forwards;
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body class="dashboard">
     <!-- Hero avec vidéo d'eau -->
@@ -22,6 +84,7 @@
                 <div>
                     <h1>🏊‍♀️ Natation En Forme 🏊‍♀️</h1>
                     <p class="subtitle">Gestion de contenu</p>
+                    <p class="welcome-message">✨ Bienvenue Lynn ✨<br>Que ton moment présent soit merveilleux 🌸</p>
                 </div>
             </div>
             <div class="dashboard-actions">
@@ -55,6 +118,29 @@
                     
                     <div class="form-group">
                         <label for="contenu">Contenu</label>
+                        
+                        <!-- 🎨 BARRE D'OUTILS D'ÉDITION -->
+                        <div class="editor-toolbar">
+                            <button type="button" class="editor-btn" onclick="insertFormat('bold')" title="Gras">
+                                <strong>B</strong>
+                            </button>
+                            <button type="button" class="editor-btn" onclick="insertFormat('italic')" title="Italique">
+                                <em>I</em>
+                            </button>
+                            <button type="button" class="editor-btn" onclick="insertFormat('highlight')" title="Surligné jaune">
+                                🟡
+                            </button>
+                            <button type="button" class="editor-btn" onclick="insertFormat('red')" title="Texte rouge">
+                                🔴
+                            </button>
+                            <button type="button" class="editor-btn" onclick="insertFormat('important')" title="Important (rouge + gras + surligné)">
+                                ⚠️
+                            </button>
+                            <button type="button" class="editor-btn" onclick="insertFormat('br')" title="Saut de ligne">
+                                ↵
+                            </button>
+                        </div>
+                        
                         <textarea id="contenu" placeholder="Écrivez votre actualité ici..." required></textarea>
                     </div>
                     
@@ -98,6 +184,72 @@
     <script src="admin.js"></script>
     
     <script>
+        // ========================================
+        // 🎨 FONCTIONS D'ÉDITION
+        // ========================================
+        
+        function insertFormat(type) {
+            const textarea = document.getElementById('contenu');
+            const start = textarea.selectionStart;
+            const end = textarea.selectionEnd;
+            const selectedText = textarea.value.substring(start, end);
+            
+            let before = '';
+            let after = '';
+            let newText = '';
+            
+            switch(type) {
+                case 'bold':
+                    before = '<strong>';
+                    after = '</strong>';
+                    newText = selectedText || 'texte en gras';
+                    break;
+                    
+                case 'italic':
+                    before = '<em>';
+                    after = '</em>';
+                    newText = selectedText || 'texte en italique';
+                    break;
+                    
+                case 'highlight':
+                    before = '<mark>';
+                    after = '</mark>';
+                    newText = selectedText || 'texte surligné';
+                    break;
+                    
+                case 'red':
+                    before = '<span style="color: red;">';
+                    after = '</span>';
+                    newText = selectedText || 'texte rouge';
+                    break;
+                    
+                case 'important':
+                    before = '<strong style="color: red; background-color: yellow; padding: 2px 6px;">';
+                    after = '</strong>';
+                    newText = selectedText || 'IMPORTANT';
+                    break;
+                    
+                case 'br':
+                    before = '';
+                    after = '<br>';
+                    newText = selectedText;
+                    break;
+            }
+            
+            // Insérer le texte formaté
+            const replacement = before + newText + after;
+            textarea.value = textarea.value.substring(0, start) + replacement + textarea.value.substring(end);
+            
+            // Repositionner le curseur
+            const newPosition = start + replacement.length;
+            textarea.focus();
+            textarea.setSelectionRange(newPosition, newPosition);
+        }
+        
+        // ========================================
+        // PROTECTION & DÉCONNEXION
+        // ========================================
+        
         // Protection : vérifier l'authentification
         if (sessionStorage.getItem('rvs_admin_auth') !== 'true') {
             window.location.href = 'index.html';
