@@ -1,4 +1,51 @@
 // ===========================
+// MENU HAMBURGER - Navigation mobile
+// ===========================
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const body = document.body;
+    
+    // Vérifier que les éléments existent
+    if (menuToggle && navMenu) {
+        // Toggle menu au clic
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle la classe active
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+            
+            console.log('Menu toggled!'); // Debug
+        });
+        
+        // Fermer le menu si on clique sur un lien
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+        
+        // Fermer le menu si on clique en dehors
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+        });
+    }
+    
+    // Charger les actualités
+    loadActualites();
+});
+
+// ===========================
 // ACTUALITÉS - Chargement dynamique
 // ===========================
 async function loadActualites() {
@@ -63,22 +110,22 @@ async function loadActualites() {
         container.innerHTML = html;
         
         // Réappliquer l'animation fade-in aux nouvelles cartes
-document.querySelectorAll('.actualite-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    
-    // Utiliser observer seulement s'il existe
-    if (typeof observer !== 'undefined') {
-        observer.observe(card);
-    } else {
-        // Animation immédiate si observer n'existe pas
-        setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, 100);
-    }
-});
+        document.querySelectorAll('.actualite-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            
+            // Utiliser observer seulement s'il existe
+            if (typeof observer !== 'undefined') {
+                observer.observe(card);
+            } else {
+                // Animation immédiate si observer n'existe pas
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+            }
+        });
 
     } catch (error) {
         console.error('Erreur chargement actualités:', error);
@@ -91,8 +138,3 @@ document.querySelectorAll('.actualite-card').forEach(card => {
         `;
     }
 }
-
-// Appeler loadActualites au chargement
-document.addEventListener('DOMContentLoaded', () => {
-    loadActualites();
-});
