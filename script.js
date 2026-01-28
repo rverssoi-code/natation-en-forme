@@ -43,7 +43,41 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Charger les actualités
     loadActualites();
+    
+    // Initialiser le carrousel d'images
+    initImageCarousel();
 });
+
+// ===========================
+// CARROUSEL D'IMAGES
+// ===========================
+function initImageCarousel() {
+    const carousel = document.querySelector('.image-carousel');
+    
+    // Vérifier si le carrousel existe sur cette page
+    if (!carousel) return;
+    
+    const images = carousel.querySelectorAll('.carousel-image');
+    
+    if (images.length === 0) return;
+    
+    let currentIndex = 0;
+    
+    // Fonction pour changer d'image
+    function changeImage() {
+        // Retirer la classe active de l'image actuelle
+        images[currentIndex].classList.remove('active');
+        
+        // Passer à l'image suivante (revenir au début si on est à la fin)
+        currentIndex = (currentIndex + 1) % images.length;
+        
+        // Ajouter la classe active à la nouvelle image
+        images[currentIndex].classList.add('active');
+    }
+    
+    // Changer d'image toutes les 1.5 secondes (1500ms)
+    setInterval(changeImage, 2500);
+}
 
 // ===========================
 // ACTUALITÉS - Chargement dynamique
