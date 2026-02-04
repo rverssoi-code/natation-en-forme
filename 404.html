@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page introuvable - Natation en Forme</title>
+    <meta name="description" content="La page que vous recherchez n'existe pas.">
+    <link rel="canonical" href="https://natationenforme.com/404.html">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Styles spécifiques pour la page 404 */
+        .error-404 {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 100px 20px 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-404::before {
+            content: '404';
+            position: absolute;
+            font-size: 25rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.05);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            line-height: 1;
+        }
+        
+        .error-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: var(--white);
+            max-width: 600px;
+        }
+        
+        .error-icon {
+            font-size: 8rem;
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .error-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .error-content p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .error-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-404-primary,
+        .btn-404-secondary {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-404-primary {
+            background: var(--white);
+            color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .btn-404-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        
+        .btn-404-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+        
+        .btn-404-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .error-404::before {
+                font-size: 12rem;
+            }
+            
+            .error-icon {
+                font-size: 5rem;
+            }
+            
+            .error-content h1 {
+                font-size: 2rem;
+            }
+            
+            .error-content p {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+            
+            .error-buttons {
+                flex-direction: column;
+                padding: 0 1rem;
+            }
+            
+            .error-buttons a {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="images/logo_No_name_tr.png" alt="Natation en Forme" class="logo-image"> 
+                    <img src="images/logo_ONLY_name.png" class="logo-name">
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="pages/actualites.html">Actualités</a></li>
+                    <li><a href="pages/a-propos.html">À propos</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                    <li><a href="pages/cours.html">Cours</a></li>
+                    <li><a href="pages/horaires.html">Horaires</a></li>
+                    <li><a href="pages/programmes.html">Programmes</a></li>
+                    <li><a href="https://app.amilia.com/store/fr/natation-en-forme/shop/programs" class="btn-primary" target="_blank">
+                    <span class="btn-text-full">Inscription en ligne</span>
+                    <span class="btn-text-short">Inscription</span>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 404 -->
+    <section class="error-404">
+        <div class="error-content">
+            <div class="error-icon">🏊‍♀️</div>
+            <h1>Oups! Cette page a coulé...</h1>
+            <p>La page que vous recherchez n'existe pas ou a été déplacée. Mais ne vous inquiétez pas, nous sommes là pour vous aider à retrouver votre chemin!</p>
+            <div class="error-buttons">
+                <a href="index.html" class="btn-404-primary">Retour à l'accueil</a>
+                <a href="pages/contact.html" class="btn-404-secondary">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

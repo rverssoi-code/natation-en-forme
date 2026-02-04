@@ -1,45 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- PAGE D'ACCUEIL -->
   <url>
     <loc>https://natationenforme.com/</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <!-- PAGE ACTUALITÉS -->
   <url>
     <loc>https://natationenforme.com/pages/actualites.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  
+  <!-- PAGE COURS -->
   <url>
     <loc>https://natationenforme.com/pages/cours.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  
+  <!-- PAGE PROGRAMMES -->
   <url>
     <loc>https://natationenforme.com/pages/programmes.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  
+  <!-- PAGE HORAIRES -->
   <url>
     <loc>https://natationenforme.com/pages/horaires.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- PAGE À PROPOS -->
   <url>
     <loc>https://natationenforme.com/pages/a-propos.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
+  <!-- PAGE CONTACT -->
   <url>
     <loc>https://natationenforme.com/pages/contact.html</loc>
-    <lastmod>2026-01-27</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- FORMULAIRE EMPLOI -->
+  <url>
+    <loc>https://natationenforme.com/pages/Form_emp.html</loc>
+    <lastmod>2026-02-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 </urlset>

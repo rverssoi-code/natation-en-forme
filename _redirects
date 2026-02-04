@@ -1,0 +1,28 @@
+# ==============================================
+# REDIRECTS POUR NATATION EN FORME
+# Fichier: _redirects (Netlify)
+# ==============================================
+
+# FORCER HTTPS ET ENLEVER WWW
+http://natationenforme.com/* https://natationenforme.com/:splat 301!
+http://www.natationenforme.com/* https://natationenforme.com/:splat 301!
+https://www.natationenforme.com/* https://natationenforme.com/:splat 301!
+
+# REDIRIGER Form_emp.htm VERS Form_emp.html (au cas où)
+/pages/Form_emp.htm /pages/Form_emp.html 301
+/Form_emp.htm /pages/Form_emp.html 301
+
+# GESTION DES TRAILING SLASHES POUR LE DOSSIER PAGES
+/pages /pages/ 301
+
+# REDIRIGER LES PAGES SANS /pages/ VERS /pages/ (si quelqu'un essaie d'accéder directement)
+/actualites.html /pages/actualites.html 301
+/a-propos.html /pages/a-propos.html 301
+/contact.html /pages/contact.html 301
+/cours.html /pages/cours.html 301
+/horaires.html /pages/horaires.html 301
+/programmes.html /pages/programmes.html 301
+/emplois.html /pages/emplois.html 301
+
+# PAGE 404 PERSONNALISÉE (optionnel - créer une page 404.html si nécessaire)
+# /* /404.html 404

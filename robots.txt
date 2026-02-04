@@ -1,0 +1,21 @@
+# ==============================================
+# ROBOTS.TXT POUR NATATION EN FORME
+# ==============================================
+
+User-agent: *
+Allow: /
+
+# SITEMAP
+Sitemap: https://natationenforme.com/sitemap.xml
+
+# BLOQUER LES DOSSIERS INUTILES
+Disallow: /admin-actualites/
+Disallow: /*.js$
+Disallow: /*.css$
+
+# PERMETTRE L'INDEXATION DES IMAGES
+Allow: /images/
+Allow: /logo/
+
+# CRAWL DELAY (OPTIONNEL)
+Crawl-delay: 1
