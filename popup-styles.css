@@ -1,0 +1,172 @@
+/* ===========================
+   POP-UP SYSTÈME
+   ========================== */
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-container {
+    position: relative;
+    background: linear-gradient(135deg, #fff9e6 0%, #fffaed 100%);
+    border: 3px solid #ffd700;
+    border-radius: 20px;
+    padding: 40px 30px;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 
+        0 10px 40px rgba(255, 215, 0, 0.3),
+        0 0 60px rgba(255, 215, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transform: scale(0.7);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: popupPulse 2s ease-in-out infinite;
+}
+
+.popup-overlay.active .popup-container {
+    transform: scale(1);
+}
+
+@keyframes popupPulse {
+    0%, 100% {
+        box-shadow: 
+            0 10px 40px rgba(255, 215, 0, 0.3),
+            0 0 60px rgba(255, 215, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+    50% {
+        box-shadow: 
+            0 10px 50px rgba(255, 215, 0, 0.4),
+            0 0 80px rgba(255, 215, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+}
+
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-weight: 300;
+}
+
+.popup-close:hover {
+    background: rgba(0, 0, 0, 0.2);
+    color: #000;
+    transform: rotate(90deg);
+}
+
+.popup-content {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.popup-content:hover {
+    transform: scale(1.02);
+}
+
+.popup-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+    animation: iconBounce 1s ease-in-out infinite;
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.popup-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #d4a017;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.popup-message {
+    font-size: 22px;
+    color: #333;
+    margin: 0 0 15px 0;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.popup-cta {
+    font-size: 16px;
+    color: #0066cc;
+    margin: 0;
+    font-weight: 500;
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .popup-container {
+        padding: 30px 20px;
+        max-width: 85%;
+    }
+    
+    .popup-icon {
+        font-size: 50px;
+    }
+    
+    .popup-title {
+        font-size: 26px;
+    }
+    
+    .popup-message {
+        font-size: 18px;
+    }
+    
+    .popup-cta {
+        font-size: 14px;
+    }
+}
+
+/* Style pour les cartes archives (légèrement atténuées) */
+.actualite-card.archive {
+    opacity: 0.85;
+}
+
+.actualite-card.archive:hover {
+    opacity: 1;
+}
