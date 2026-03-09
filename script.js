@@ -96,8 +96,8 @@ function initPopup() {
                 <div class="popup-content" id="popupClickable">
                     <div class="popup-icon">⚠️</div>
                     <h3 class="popup-title">ATTENTION</h3>
-                    <p class="popup-message">Horaire modifié<br>Semaine de relâche</p>
-                    <p class="popup-cta">Cliquez ici pour plus de détails</p>
+                    <p class="popup-message">Horaire de cours et d'inscriptions modifié</p>
+                    <p class="popup-cta">Cliquez ici pour les actualités</p>
                 </div>
             </div>
         </div>
