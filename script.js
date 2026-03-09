@@ -1,8 +1,13 @@
 // ===========================
 // 🚨 POP-UP CONFIGURATION 🚨
 // ===========================
-// Change cette valeur à 'false' pour désactiver le pop-up
+// POPUP_ACTIVE: Change à 'false' pour désactiver complètement le pop-up
 const POPUP_ACTIVE = true;
+
+// POPUP_SHOW_ONCE: Contrôle la fréquence d'affichage
+// true  = Le pop-up apparaît seulement à la PREMIÈRE visite (se souvient avec localStorage)
+// false = Le pop-up apparaît à CHAQUE visite (comportement actuel)
+const POPUP_SHOW_ONCE = true;
 
 // ===========================
 // MENU HAMBURGER - Navigation mobile
@@ -64,6 +69,15 @@ function initPopup() {
         return;
     }
     
+    // Vérifier si on doit afficher seulement une fois
+    if (POPUP_SHOW_ONCE) {
+        const hasSeenPopup = localStorage.getItem('natationPopupSeen');
+        if (hasSeenPopup === 'true') {
+            console.log('Pop-up déjà vu (POPUP_SHOW_ONCE = true)');
+            return;
+        }
+    }
+    
     // Vérifier si on est sur la page index
     const isIndexPage = window.location.pathname === '/' || 
                        window.location.pathname === '/index.html' || 
@@ -91,6 +105,11 @@ function initPopup() {
     
     // Injecter le pop-up dans le body
     document.body.insertAdjacentHTML('beforeend', popupHTML);
+    
+    // Marquer comme vu si POPUP_SHOW_ONCE est activé
+    if (POPUP_SHOW_ONCE) {
+        localStorage.setItem('natationPopupSeen', 'true');
+    }
     
     // Références
     const popup = document.getElementById('relachePopup');
