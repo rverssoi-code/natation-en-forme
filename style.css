@@ -254,6 +254,27 @@ a {
     padding: 2rem;
 }
 
+/* ════════════════════════════════════
+ * LOGO HERO — Adjust here
+ * border-radius : arrondir les coins du fond blanc du logo
+ * max-width     : changer la taille d'affichage
+ * ════════════════════════════════════ */
+.hero-logo-img {
+    display: block;
+    margin: 0 auto 2rem;
+    max-width: 550px;
+    width: 80%;
+}
+
+@media (max-width: 768px) {
+    .hero-logo-img {
+        max-width: 220px;
+        border-radius: 14px;
+        margin-bottom: 1.5rem;
+    }
+}
+/* ════════════════════════════════════ */
+
 /* Pas de padding-top supplémentaire sur mobile - on gère avec le hero */
 @media (max-width: 768px) {
     .hero-content {

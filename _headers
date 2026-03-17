@@ -1,0 +1,34 @@
+# ════════════════════════════════════════════
+# CLOUDFLARE PAGES — SECURITY HEADERS
+# Adjust here — Natation en Forme
+# ════════════════════════════════════════════
+
+/*
+  # --- Security Headers ---
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  # Adjust here ^^^ si Google Analytics ou autre service est ajouté plus tard
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; font-src 'self'; frame-src https://www.google.com; connect-src 'self'; frame-ancestors 'none'
+  # frame-src https://www.google.com — requis pour les embeds Google Maps dans contact.html
+  # Adjust here ^^^ si Amilia iframe, analytics ou autre CDN est ajouté
+
+# --- Cache — Images (1 an, immutable) ---
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# --- Cache — CSS et JS (24h) ---
+/*.css
+  Cache-Control: public, max-age=86400
+
+/*.js
+  Cache-Control: public, max-age=86400
+
+# --- Cache — HTML (toujours revalider) ---
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
