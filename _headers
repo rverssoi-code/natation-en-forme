@@ -11,7 +11,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   # Adjust here ^^^ si Google Analytics ou autre service est ajouté plus tard
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; font-src 'self'; frame-src https://www.google.com; connect-src 'self'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src 'self'; font-src 'self'; frame-src https://www.google.com; connect-src 'self' https://cloudflareinsights.com; frame-ancestors 'none'  
   # frame-src https://www.google.com — requis pour les embeds Google Maps dans contact.html
   # Adjust here ^^^ si Amilia iframe, analytics ou autre CDN est ajouté
 
